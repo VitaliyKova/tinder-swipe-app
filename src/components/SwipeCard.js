@@ -16,7 +16,7 @@ const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
   };
 
   const handleTouchEnd = () => {
-    const threshold = 50;
+    const threshold = 5;
     if(touchStartX.current !== null && touchEndX.current !== null) {
       const distance = touchStartX.current - touchEndX.current;
       if (Math.abs(distance) < threshold) {
