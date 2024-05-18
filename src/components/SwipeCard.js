@@ -56,13 +56,14 @@
 
 // export default SwipeCard;
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useGesture } from "@use-gesture/react";
 import TinderCard from "react-tinder-card";
 import "./SwipeCard.css";
 
 const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
   const [item, setItem] = useState(0);
+  const touchStartX = useRef(null);
 
   const newItem = () => {
     setItem((prevItem) => {
@@ -71,14 +72,20 @@ const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
   };
 
   const bind = useGesture({
-    onDrag: ({ movement: [mx], memo }) => {
-      if (!memo) {
-        if (Math.abs(mx) < 10) {
-          newItem();
-          return [true];
-        }
+    onDragStart: ({ touches, event }) => {
+      if (touches === 1) {
+        touchStartX.current = event.touches[0].clientX;
       }
-      return memo;
+    },
+    onDragEnd: ({ movement: [mx], event }) => {
+      const threshold = 5; // Пороговое значение для чувствительного касания
+      if (touchStartX.current !== null) {
+        const distance = touchStartX.current - event.changedTouches[0].clientX;
+        if (Math.abs(distance) < threshold) {
+          newItem();
+        }
+        touchStartX.current = null;
+      }
     },
   });
 
@@ -87,7 +94,7 @@ const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
       className="swipe"
       onSwipe={(dir) => onSwipe(dir, character.name)}
       onCardLeftScreen={() => onCardLeftScreen(character.name)}
-      preventSwipe={["up", "down"]}
+      preventSwipe={["up", "down", "left", "right"]} // Отключаем свайпы
     >
       <div
         {...bind()}
