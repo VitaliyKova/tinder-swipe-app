@@ -18,7 +18,7 @@ const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
   const handleTouchEnd = () => {
     const threshold = 50;
     if(touchStartX.current !== null && touchEndX.current !== null) {
-      const distance = touchStartX - touchEndX.current;
+      const distance = touchStartX.current - touchEndX.current;
       if (Math.abs(distance) < threshold) {
         newItem();
       }
@@ -41,7 +41,7 @@ const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
       preventSwipe={["up", "down"]}
     >
       <div
-        style={{ backgroundImage: "url( " + character.url[item] + " )" }}
+        style={{ backgroundImage: `url(${character.url[item]})` }}
         className="card"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
