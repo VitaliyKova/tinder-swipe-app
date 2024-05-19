@@ -87,7 +87,8 @@
 }
 
 .none {
-  bottom: -20px;
+  height: 2vh;
+  bottom: 95px;
   background-color: transparent;
   color: transparent;
 }
