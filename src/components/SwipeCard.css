@@ -6,7 +6,7 @@
 .swipe {
   position: absolute;
   width: 100vw;
-  transition: transform 0.1s linear;
+  transition: transform 0.05s linear;
 }
 
 .card {
