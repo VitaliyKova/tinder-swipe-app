@@ -77,7 +77,6 @@ import "./SwipeCard.css";
 
 const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
   const [item, setItem] = useState(0);
-  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const touchStartX = useRef(null);
   const touchStartY = useRef(null);
 
@@ -86,27 +85,33 @@ const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
     touchStartY.current = e.targetTouches[0].clientY;
   };
 
+
   const handleTouchEnd = (e) => {
     const touchEndX = e.changedTouches[0].clientX;
     const touchEndY = e.changedTouches[0].clientY;
-    const threshold = 50;
-    if (touchStartX.current !== null && touchEndX !== null) {
-      const distanceX = touchStartX.current - touchEndX;
-      const distanceY = touchStartY.current - touchEndY;
-      console.log(distanceY);
+    const threshold = 5; // Пороговое значение для жестов
 
-      if (distanceY > threshold) {
-        setIsDescriptionExpanded(true);
-      } else if (distanceY < threshold) {
-        setIsDescriptionExpanded(false);
-      }
+    if (touchStartX.current !== null && touchEndX !== null && touchStartY.current !== null && touchEndY !== null) {
+      const distanceX = touchEndX - touchStartX.current;
+      const distanceY = touchEndY - touchStartY.current;
 
-      if (Math.abs(distanceX) < threshold && Math.abs(distanceY) < threshold) {
+      if (Math.abs(distanceX) > Math.abs(distanceY) && Math.abs(distanceX) > threshold) {
+        // Если свайп по горизонтали больше, чем по вертикали и превышает пороговое значение
+        handleSwipe(distanceX > 0 ? 'right' : 'left');
+      } else if (Math.abs(distanceX) < threshold && Math.abs(distanceY) < threshold) {
+        // Если свайп короткий, переключаем изображение
         newItem();
       }
     }
+
     touchStartX.current = null;
     touchStartY.current = null;
+  };
+
+  const handleSwipe = (direction) => {
+    if (direction === 'left' || direction === 'right') {
+      onSwipe(direction, character.name);
+    }
   };
 
   const newItem = () => {
@@ -119,11 +124,16 @@ const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
     <div onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       <TinderCard
         className="swipe"
+        // onSwipe={(dir) => {
+        //   onSwipe(dir, character.name);
+        // }}
         onSwipe={(dir) => {
-          onSwipe(dir, character.name);
+          handleSwipe(dir);
         }}
         onCardLeftScreen={() => onCardLeftScreen(character.name)}
         preventSwipe={["up", "down"]}
+        swipeThreshold={50}
+        swipeRequirementType="position"
       >
         <div
           style={{ backgroundImage: `url(${character.url[item]})` }}
@@ -140,11 +150,6 @@ const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
           </div>
         </div>
       </TinderCard>
-      <div
-        className={`description ${isDescriptionExpanded ? "expanded" : "none"}`}
-      >
-        <p className="description__text">{character.description}</p>
-      </div>
     </div>
   );
 };
