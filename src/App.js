@@ -70,6 +70,7 @@ import "./App.css";
 
 const characters = [
   {
+    id: 1,
     name: "Alanya",
     url: [
       "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663318944_4-mykaleidoscope-ru-p-villi-v-turtsii-krasivo-4.jpg",
@@ -79,6 +80,7 @@ const characters = [
     description: "Описание апартаментов в Алании",
   },
   {
+    id: 2,
     name: "Antalya",
     url: [
       "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663318934_61-mykaleidoscope-ru-p-villi-v-turtsii-krasivo-63.jpg",
@@ -88,6 +90,7 @@ const characters = [
     description: "Описание апартаментов в Анталии",
   },
   {
+    id: 3,
     name: "Izmir",
     url: [
       "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663318929_21-mykaleidoscope-ru-p-villi-v-turtsii-krasivo-22.jpg",
@@ -100,24 +103,52 @@ const characters = [
 
 function App() {
   const [lastDirection, setLastDirection] = useState();
+  const [history, setHistory] = useState([]);
+  const [currentList, setCurrentList] = useState(characters);
 
-  const swiped = (direction, nameToDelete) => {
+  const swiped = (direction) => {
     setLastDirection(direction);
   };
 
-  const outOfFrame = (name) => {
-    console.log(name + " left the screen!");
+  const outOfFrame = (idToDelete) => {
+    setCurrentList((prevList) => {
+      const card = prevList.find((character) => character.id === idToDelete);
+      if (card) {
+        setHistory((prevHistory) => [...prevHistory, card]);
+      }
+      return prevList.filter((character) => character.id !== idToDelete);
+    });
+    console.log(idToDelete + " added to the history!");
+  };
+
+  const restorePrevious = () => {
+    setHistory((prevHistory) => {
+      if (prevHistory.length > 0) {
+        const previousCard = prevHistory[prevHistory.length - 1];
+        setCurrentList((prevList) => {
+          // Проверяем, чтобы не было дубликатов
+          if (!prevList.some((character) => character.id === previousCard.id)) {
+            return [...prevList, previousCard]; // Добавляем карточку в конец списка
+          }
+          return prevList;
+        });
+        return prevHistory.slice(0, -1);
+      }
+      return prevHistory;
+    });
   };
 
   return (
     <div className="app">
       <div className="cardContainer">
-        {characters.map((character) => (
+        {currentList.map((character) => (
           <SwipeCard
-            key={character.name}
+            key={character.id}
             character={character}
             onSwipe={swiped}
-            onCardLeftScreen={outOfFrame}
+            onCardScreen={outOfFrame}
+            restorePrevious={restorePrevious}
+            history={history}
           />
         ))}
       </div>
@@ -126,4 +157,3 @@ function App() {
 }
 
 export default App;
-

@@ -73,9 +73,16 @@
 
 import React, { useState, useRef } from "react";
 import TinderCard from "react-tinder-card";
+import { FaUndo } from "react-icons/fa";
 import "./SwipeCard.css";
 
-const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
+const SwipeCard = ({
+  character,
+  onSwipe,
+  onCardScreen,
+  restorePrevious,
+  history,
+}) => {
   const [item, setItem] = useState(0);
   const touchStartX = useRef(null);
   const touchStartY = useRef(null);
@@ -85,20 +92,30 @@ const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
     touchStartY.current = e.targetTouches[0].clientY;
   };
 
-
   const handleTouchEnd = (e) => {
     const touchEndX = e.changedTouches[0].clientX;
     const touchEndY = e.changedTouches[0].clientY;
     const threshold = 5; // Пороговое значение для жестов
 
-    if (touchStartX.current !== null && touchEndX !== null && touchStartY.current !== null && touchEndY !== null) {
+    if (
+      touchStartX.current !== null &&
+      touchEndX !== null &&
+      touchStartY.current !== null &&
+      touchEndY !== null
+    ) {
       const distanceX = touchEndX - touchStartX.current;
       const distanceY = touchEndY - touchStartY.current;
 
-      if (Math.abs(distanceX) > Math.abs(distanceY) && Math.abs(distanceX) > threshold) {
+      if (
+        Math.abs(distanceX) > Math.abs(distanceY) &&
+        Math.abs(distanceX) > threshold
+      ) {
         // Если свайп по горизонтали больше, чем по вертикали и превышает пороговое значение
-        handleSwipe(distanceX > 0 ? 'right' : 'left');
-      } else if (Math.abs(distanceX) < threshold && Math.abs(distanceY) < threshold) {
+        handleSwipe(distanceX > 0 ? "right" : "left");
+      } else if (
+        Math.abs(distanceX) < threshold &&
+        Math.abs(distanceY) < threshold
+      ) {
         // Если свайп короткий, переключаем изображение
         newItem();
       }
@@ -109,8 +126,8 @@ const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
   };
 
   const handleSwipe = (direction) => {
-    if (direction === 'left' || direction === 'right') {
-      onSwipe(direction, character.name);
+    if (direction === "left" || direction === "right") {
+      onSwipe(direction, character.id);
     }
   };
 
@@ -124,13 +141,10 @@ const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
     <div onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       <TinderCard
         className="swipe"
-        // onSwipe={(dir) => {
-        //   onSwipe(dir, character.name);
-        // }}
         onSwipe={(dir) => {
           handleSwipe(dir);
         }}
-        onCardLeftScreen={() => onCardLeftScreen(character.name)}
+        onCardLeftScreen={() => onCardScreen(character.id)}
         preventSwipe={["up", "down"]}
         swipeThreshold={50}
         swipeRequirementType="position"
@@ -148,6 +162,16 @@ const SwipeCard = ({ character, onSwipe, onCardLeftScreen }) => {
               ></div>
             ))}
           </div>
+          <button
+            onTouchEndCapture={(e) => {
+              e.stopPropagation();
+              restorePrevious();
+            }}
+            disabled={history.length === 0}
+            className="button__back"
+          >
+            &#x21ba;
+          </button>
         </div>
       </TinderCard>
     </div>

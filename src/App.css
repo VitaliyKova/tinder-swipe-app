@@ -11,8 +11,9 @@
 }
 
 .cardContainer {
+  position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 60vh;
   z-index: 2;
 }
 
