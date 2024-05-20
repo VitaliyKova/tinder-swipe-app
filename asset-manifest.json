@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tinder-swipe-app/static/css/main.0b2ec4e3.css",
+    "main.css": "/tinder-swipe-app/static/css/main.226ce37f.css",
     "main.js": "/tinder-swipe-app/static/js/main.e2bb7235.js",
     "static/js/453.be42a8db.chunk.js": "/tinder-swipe-app/static/js/453.be42a8db.chunk.js",
     "index.html": "/tinder-swipe-app/index.html",
-    "main.0b2ec4e3.css.map": "/tinder-swipe-app/static/css/main.0b2ec4e3.css.map",
+    "main.226ce37f.css.map": "/tinder-swipe-app/static/css/main.226ce37f.css.map",
     "main.e2bb7235.js.map": "/tinder-swipe-app/static/js/main.e2bb7235.js.map",
     "453.be42a8db.chunk.js.map": "/tinder-swipe-app/static/js/453.be42a8db.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b2ec4e3.css",
+    "static/css/main.226ce37f.css",
     "static/js/main.e2bb7235.js"
   ]
 }
