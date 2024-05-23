@@ -1,0 +1,27 @@
+.filter {
+    padding-left: 23px;
+    padding-right: 23px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 9px;
+
+    &__text {
+        color: rgb(37, 43, 92);
+        font-size: 18px;
+        font-weight: 500;
+        text-align: left;
+    }
+
+    &__box {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
+
+    &__title {
+        color: rgb(37, 43, 92);
+        font-size: 15px;
+        font-weight: 300;
+    
+    }
+}

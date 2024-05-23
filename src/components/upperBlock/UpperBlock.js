@@ -10,11 +10,11 @@ function UpperBlock({ country, brocker }) {
         <FontAwesomeIcon icon={faArrowUpFromBracket} className="upperBlock__icon"/>
         <h3 className="upperBlock__heading">{country}</h3>
       </div>
-      <div className="upperBlock__iconContainer">
+      <div className="upperBlock__stories">
         {brocker.map((field) => (
           <div
             key={field.id}
-            className={`icon ${field.viewedStor ? "unviewed" : ""}`}
+            className={`upperBlock__item ${field.viewedStor ? "upperBlock__item--unviewed" : ""}`}
           >
             <img src={field.imgReels} alt={field.name} />
           </div>

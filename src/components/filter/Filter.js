@@ -1,5 +1,5 @@
 import React from "react";
-import "./Filter.css"
+import "./filter.css";
 
 const Filter = ({ aparts }) => {
   return (

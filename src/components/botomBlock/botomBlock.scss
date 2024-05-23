@@ -1,0 +1,67 @@
+@import url("../../fonts.css");
+
+.botom-block {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.brocker {
+  margin-left: 11px;
+  width: 49vw;
+  height: 20vw;
+  border-radius: 15px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  overflow: hidden;
+  background: rgb(245, 244, 248);
+  box-shadow: 0 18px 20px -10px rgba(0, 0, 0, 0.3);
+
+  &__img {
+    width: 65px;
+    height: 65px;
+    margin-left: 11px;
+    object-fit: cover;
+    border-radius: 50px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-left: 11px;
+  }
+
+  &__name {
+    color: rgb(37, 43, 92);
+    max-width: 30%;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__type {
+    color: rgb(83, 88, 122);
+    font-size: 16px;
+    font-weight: 300;
+  }
+}
+
+.mesage {
+  margin-right: 11px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: none;
+  border-radius: 15px;
+  background: radial-gradient(
+    147.43% 142.64% at 0% -16%,
+    rgb(17, 207, 116) 4.688%,
+    rgb(8, 199, 176) 98.305%
+  );
+  box-shadow: 0 18px 20px -10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+
+  &:active{
+    transform: scale(1.15);
+  }
+}

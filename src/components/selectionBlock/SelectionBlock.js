@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SelectionBloc.css";
+import "./selectionBlock.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 

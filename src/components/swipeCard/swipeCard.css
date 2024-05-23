@@ -1,0 +1,164 @@
+@import url("../../fonts.css");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "New Rubrik";
+}
+
+.swipe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.1s linear;
+}
+
+.card {
+  margin: 0 auto;
+  position: relative;
+  max-width: 95vw;
+  height: 100%;
+  box-shadow: 0 18px 20px -10px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s;
+}
+.card__botom {
+  position: absolute;
+  bottom: 0;
+  height: 20%;
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0) 100%);
+}
+.card__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  padding-top: 9px;
+  padding-left: 19px;
+  padding-right: 19px;
+}
+.card__price-status {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.card__price {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 600;
+}
+.card__status {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
+}
+.card__buttons {
+  display: flex;
+  gap: 17px;
+}
+.card__button {
+  position: relative;
+  border: none;
+  background: none;
+}
+.card__button-img {
+  transition: all 0.4s;
+}
+.card__button :active {
+  transform: scale(1.4);
+}
+.card__like-count {
+  position: absolute;
+  font-size: 12px;
+  color: #ffffff;
+  top: 22%;
+  left: 22%;
+  pointer-events: none;
+}
+.card__info {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 19px;
+  padding-right: 19px;
+  padding-top: 3px;
+}
+.card__info-icons {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 300;
+  color: #ffffff;
+}
+.card__info-time {
+  font-size: 16px;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.indicator {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+.indicator__block {
+  width: 60px;
+  height: 2px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  opacity: 0.5;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.indicator__block--active {
+  opacity: 1;
+  background-color: #ffffff;
+}
+
+.button__back {
+  z-index: 4;
+  position: absolute;
+  bottom: 84px;
+  left: 20px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: rgb(17, 207, 36);
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+.button__back:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.swipe-feedback {
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 9%;
+  border-radius: 50px;
+  color: white;
+  padding: 5px 19px;
+  pointer-events: none;
+  display: none;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.swipe-feedback.left {
+  border: 2px solid #c40000;
+  padding: 8px 19px 1px 19px;
+}
+.swipe-feedback.right {
+  border: 2px solid #00c44b;
+}
+.swipe-feedback__img {
+  width: 100%;
+}/*# sourceMappingURL=swipeCard.css.map */
