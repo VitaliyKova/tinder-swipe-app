@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./selectionBlock.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
+
 
 function SelectionBloc() {
   return (

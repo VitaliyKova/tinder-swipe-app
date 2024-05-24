@@ -1,0 +1,55 @@
+.full-info__card {
+  position: relative;
+  height: 56vh;
+}
+.full-info__button {
+  position: absolute;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  transition: transform 0.1s;
+}
+.full-info__button:active {
+  transform: scale(1.2);
+}
+.full-info__button--back {
+  top: 5vh;
+  left: 5vw;
+  z-index: 1;
+  padding: 14px 20px;
+}
+.full-info__button--send {
+  top: 18vh;
+  right: 5vw;
+  padding: 14px 17px;
+  font-size: 19px;
+}
+.full-info__button--view {
+  top: 26vh;
+  right: 5vw;
+  padding: 9px 12px;
+  font-size: 19px;
+}
+.full-info__button--heart {
+  bottom: 5vh;
+  right: 5vw;
+  background: none;
+}
+.full-info__button--count {
+  position: absolute;
+  font-size: 12px;
+  color: #ffffff;
+  top: 22%;
+  left: 28%;
+  pointer-events: none;
+}
+.full-info__button-img-heart {
+  width: 40px;
+}
+.full-info__button-img-view {
+  width: 27px;
+}
+.full-info__button-img-back {
+  width: 12px;
+}/*# sourceMappingURL=fullInfo.css.map */

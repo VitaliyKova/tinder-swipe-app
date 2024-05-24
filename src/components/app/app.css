@@ -19,7 +19,8 @@ html, body {
 
 .cardContainer {
   position: relative;
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
   height: 40%;
 }
 .cardContainer__text {

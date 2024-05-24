@@ -1,0 +1,39 @@
+.card {
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 18px 20px -18px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s;
+}
+.card__full {
+  border-radius: 20px 20px 0 0;
+  box-shadow: none;
+}
+
+.indicator {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+.indicator__full {
+  top: 95%;
+}
+.indicator__block {
+  width: 60px;
+  height: 2px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  opacity: 0.5;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.indicator__block--active {
+  opacity: 1;
+  background-color: #ffffff;
+}/*# sourceMappingURL=objectCard.css.map */
