@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/tinder-swipe-app/static/css/main.4628cd1f.css",
-    "main.js": "/tinder-swipe-app/static/js/main.aa2ec267.js",
+    "main.js": "/tinder-swipe-app/static/js/main.22a34ebe.js",
     "static/js/453.be42a8db.chunk.js": "/tinder-swipe-app/static/js/453.be42a8db.chunk.js",
     "static/media/New Rubrik Medium.otf": "/tinder-swipe-app/static/media/New Rubrik Medium.17e768c03f61c4093184.otf",
     "static/media/New Rubrik Light.otf": "/tinder-swipe-app/static/media/New Rubrik Light.380bcdf5db0e102c55ca.otf",
     "static/media/New Rubrik ExtraBold.otf": "/tinder-swipe-app/static/media/New Rubrik ExtraBold.20beeec85ad1a8c9a8e4.otf",
     "index.html": "/tinder-swipe-app/index.html",
     "main.4628cd1f.css.map": "/tinder-swipe-app/static/css/main.4628cd1f.css.map",
-    "main.aa2ec267.js.map": "/tinder-swipe-app/static/js/main.aa2ec267.js.map",
+    "main.22a34ebe.js.map": "/tinder-swipe-app/static/js/main.22a34ebe.js.map",
     "453.be42a8db.chunk.js.map": "/tinder-swipe-app/static/js/453.be42a8db.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4628cd1f.css",
-    "static/js/main.aa2ec267.js"
+    "static/js/main.22a34ebe.js"
   ]
 }
