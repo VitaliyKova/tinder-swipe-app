@@ -162,7 +162,7 @@ const SwipeCard = ({
                   alt="icon filter"
                 />
                 <p>2</p>
-                <img
+                <img className="card__info-squere"
                   src={process.env.PUBLIC_URL + "/images/icon_squere.svg"}
                   alt="icon areas"
                 />

@@ -84,6 +84,9 @@
   padding-right: 19px;
   padding-top: 3px;
 }
+.card__info-squere {
+  max-width: 17px;
+}
 .card__info-icons {
   display: flex;
   gap: 4px;
