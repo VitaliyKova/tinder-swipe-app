@@ -163,7 +163,7 @@ const SwipeCard = ({
                 />
                 <p>2</p>
                 <img
-                  src={process.env.PUBLIC_URL + "/images/icon_area.svg"}
+                  src={process.env.PUBLIC_URL + "/images/icon_areas.svg"}
                   alt="icon areas"
                 />
                 <p>125m2</p>
