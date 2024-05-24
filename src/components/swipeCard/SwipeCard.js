@@ -135,7 +135,7 @@ const SwipeCard = ({
                   <p className="card__like-count">{object.likeCounter}</p>
                 </button>
                 <button
-                  className="card__button"
+                  className="card__button card__button--info"
                   onTouchEndCapture={(e) => {
                     e.stopPropagation();
                   }}
@@ -145,7 +145,7 @@ const SwipeCard = ({
                 >
                   <img className="card__button-img"
                     src={process.env.PUBLIC_URL + "/images/icon_info.svg"}
-                    alt="icon bed"
+                    alt="icon info"
                   />
                 </button>
               </div>
