@@ -16,7 +16,7 @@
   align-items: center;
   overflow: hidden;
   background: rgb(245, 244, 248);
-  box-shadow: 0 18px 20px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 18px 20px -27px rgba(0, 0, 0, 0.3);
 
   &__img {
     width: 65px;
@@ -58,7 +58,7 @@
     rgb(17, 207, 116) 4.688%,
     rgb(8, 199, 176) 98.305%
   );
-  box-shadow: 0 18px 20px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 18px 20px -20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s;
 
   &:active{
