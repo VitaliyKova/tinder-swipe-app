@@ -53,7 +53,7 @@
 }
 .card__status {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
 }
 .card__buttons {
@@ -92,12 +92,12 @@
   display: flex;
   gap: 4px;
   align-items: center;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
   color: #ffffff;
 }
 .card__info-time {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
   color: #ffffff;
 }
