@@ -1,0 +1,29 @@
+.object-details {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+
+  color: #ffffff;
+
+  &__text {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+
+    &--grey {
+      color: rgba(37, 43, 92, 0.7);
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+
+  &__icon {
+    fill: #ffffff;
+    width: 18px;
+
+    &--grey {
+      fill: rgba(37, 43, 92, 0.7);
+      width: 20px;
+    }
+  }
+}

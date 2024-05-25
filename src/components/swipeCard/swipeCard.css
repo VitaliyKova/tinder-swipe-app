@@ -77,14 +77,6 @@
 .card__info-squere {
   max-width: 17px;
 }
-.card__info-icons {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 300;
-  color: #ffffff;
-}
 .card__info-time {
   font-size: 14px;
   font-weight: 300;

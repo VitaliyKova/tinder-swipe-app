@@ -14,15 +14,6 @@
 }
 
 .card {
-  // margin: 0 auto;
-  // position: relative;
-  // height: 100%;
-  // box-shadow: 0 18px 20px -18px rgba(0, 0, 0, 0.3);
-  // border-radius: 20px;
-  // background-size: cover;
-  // background-position: center;
-  // transition: background-image 0.5s;
-
   &__botom {
     position: absolute;
     display: flex;
@@ -106,46 +97,12 @@
     }
   }
 
-  &__info-icons{
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    font-size: 14px;
-    font-weight: 300;
-    color: #ffffff;
-  }
-
   &__info-time{
     font-size: 14px;
     font-weight: 300;
     color: #ffffff;
   }
 }
-
-// .indicator {
-//   position: absolute;
-//   top: 25px;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   display: flex;
-//   gap: 5px;
-
-//   &__block {
-//     width: 60px;
-//     height: 2px;
-//     border-radius: 5px;
-//     background-color: #ffffff;
-//     opacity: 0.5;
-//     border: 1px solid rgba(0, 0, 0, 0.2);
-
-//     &--active {
-//         opacity: 1;
-//         background-color: #ffffff;
-//       }
-//   }
-
-  
-// }
 
 .button__back {
   z-index: 4;

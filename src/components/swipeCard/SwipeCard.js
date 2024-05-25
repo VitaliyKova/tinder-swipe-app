@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import TinderCard from "react-tinder-card";
 import ObjectCard from "../obgectCard/ObjectCard";
 import { useNavigate } from "react-router-dom";
+import ObjectDetails from "../objectDetails/ObjectDetails";
 import "./swipeCard.css";
 
 const SwipeCard = ({
@@ -119,7 +120,7 @@ const SwipeCard = ({
               ></div>
             ))}
           </div> */}
-          <ObjectCard object={object} className="card__main"/>
+          <ObjectCard object={object} classNameCard="" classNameIndicator=""/>
           <div ref={swipeFeedbackRef} className="swipe-feedback"></div>
           <div className="card__botom">
             <div className="card__top">
@@ -163,24 +164,7 @@ const SwipeCard = ({
               </div>
             </div>
             <div className="card__info">
-              <div className="card__info-icons">
-                <img
-                  src={process.env.PUBLIC_URL + "/images/icon_bed.svg"}
-                  alt="icon bed"
-                />
-                <p>3+1</p>
-                <img
-                  src={process.env.PUBLIC_URL + "/images/icon_bath.svg"}
-                  alt="icon filter"
-                />
-                <p>2</p>
-                <img
-                  className="card__info-squere"
-                  src={process.env.PUBLIC_URL + "/images/icon_squere.svg"}
-                  alt="icon areas"
-                />
-                <p>125m2</p>
-              </div>
+              <ObjectDetails styleClass=""/>
               <p className="card__info-time">Сегодня 16:40</p>
             </div>
           </div>

@@ -3,7 +3,6 @@ import './objectCard.css'
 
 function ObjectCard({ object, classNameCard, classNameIndicator }) {
   const [item, setItem] = useState(0);
-  console.log(object);
 
   const newItem = () => {
     setItem((prevItem) => {
