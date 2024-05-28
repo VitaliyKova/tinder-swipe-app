@@ -28,6 +28,19 @@ function App() {
     }
   }, [history]);
 
+  const preloadImages = () => {
+    globalObject.aparts.forEach((apartment) => {
+      apartment.url.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    });
+  };
+
+  useEffect(() => {
+    preloadImages();
+  }, []);
+
   const swiped = (direction, aparts) => {
     setLastDirection(direction);
 

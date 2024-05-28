@@ -7,17 +7,6 @@ function ObjectCard({ object, classNameCard, classNameIndicator }) {
   const touchEndX = useRef(null);
   const threshold = 30;
 
-  useEffect(() => {
-    const preloadImg = () => {
-      object.urk.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-      });
-      preloadImg();
-    }
-    
-  }, [object.url]);
-
   const handelTouchStartX = (e) => {
     if (e.targetTouches.length > 0) {
       touchStartX.current = e.targetTouches[0].clientX;
