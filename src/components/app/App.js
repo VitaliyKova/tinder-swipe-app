@@ -5,6 +5,7 @@ import UpperBlock from "../upperBlock/UpperBlock";
 import SelectionBloc from "../selectionBlock/SelectionBlock";
 import FullInfo from "../FullInfo/FullInfo";
 import globalObject from "../fietch/globalObject";
+import Navigator from "../navigator/Navigator";
 import Filter from "../filter/Filter";
 import "./app.css";
 import BotomBlock from "../botomBlock/BotomBlock";
@@ -133,6 +134,7 @@ function App() {
         />
         <Route path="/FullInfo/:id" element={<FullInfo />} />
       </Routes>
+      <Navigator/>
     </Router>
   );
 }

@@ -1,0 +1,30 @@
+.navigator {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  padding: 15px 0 10px 0;
+  justify-content: space-around;
+  background-color: white;
+}
+.navigator__button {
+  border: none;
+  background: none;
+  transition: all 0.1s;
+}
+.navigator__button-stroke {
+  fill: none;
+  stroke: rgb(0, 0, 0);
+  border: none;
+  background: none;
+  transition: all 0.1s;
+}
+.navigator__button-stroke:active {
+  stroke: rgb(8, 199, 176);
+  transform: scale(1.3);
+}
+.navigator__button:active {
+  fill: rgb(8, 199, 176);
+  transform: scale(1.3);
+}/*# sourceMappingURL=navigator.css.map */
