@@ -12,49 +12,10 @@ const SwipeCard = ({
   restorePrevious,
   history,
 }) => {
-  const [item, setItem] = useState(0);
   const swipeFeedbackRef = useRef(null);
-  const touchStartX = useRef(null);
-  const touchStartY = useRef(null);
   const navigate = useNavigate();
 
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.targetTouches[0].clientX;
-    touchStartY.current = e.targetTouches[0].clientY;
-  };
-
   const handleTouchEnd = (e) => {
-    const touchEndX = e.changedTouches[0].clientX;
-    const touchEndY = e.changedTouches[0].clientY;
-    const threshold = 5; // Пороговое значение для жестов
-
-    if (
-      touchStartX.current !== null &&
-      touchEndX !== null &&
-      touchStartY.current !== null &&
-      touchEndY !== null
-    ) {
-      const distanceX = touchEndX - touchStartX.current;
-      const distanceY = touchEndY - touchStartY.current;
-
-      if (
-        Math.abs(distanceX) > Math.abs(distanceY) &&
-        Math.abs(distanceX) > threshold
-      ) {
-        // Если свайп по горизонтали больше, чем по вертикали и превышает пороговое значение
-        // handleSwipe(distanceX > 0 ? "right" : "left");
-      } else if (
-        Math.abs(distanceX) < threshold &&
-        Math.abs(distanceY) < threshold
-      ) {
-        // Если свайп короткий, переключаем изображение
-        newItem();
-      }
-    }
-
-    touchStartX.current = null;
-    touchStartY.current = null;
-
     if (swipeFeedbackRef.current) {
       setTimeout(() => {
         swipeFeedbackRef.current.style.display = "none";
@@ -66,12 +27,6 @@ const SwipeCard = ({
     if (direction === "left" || direction === "right") {
       onSwipe(direction, object);
     }
-  };
-
-  const newItem = () => {
-    setItem((prevItem) => {
-      return prevItem === object.url.length - 1 ? 0 : prevItem + 1;
-    });
   };
 
   const handleCardMove = (dir) => {
@@ -94,7 +49,7 @@ const SwipeCard = ({
   };
 
   return (
-    <div onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+    <div onTouchEnd={handleTouchEnd}>
       <TinderCard
         className="swipe"
         onSwipe={(dir) => {
@@ -106,21 +61,8 @@ const SwipeCard = ({
         swipeRequirementType="position"
         onSwipeRequirementFulfilled={(dir) => handleCardMove(dir)}
       >
-        <div
-        // style={{ backgroundImage: `url(${object.url[item]})` }}
-        className="card"
-        >
-          {/* <div className="indicator">
-            {object.url.map((_, index) => (
-              <div
-                key={index}
-                className={`indicator__block ${
-                  index === item ? "indicator__block--active" : ""
-                }`}
-              ></div>
-            ))}
-          </div> */}
-          <ObjectCard object={object} classNameCard="" classNameIndicator=""/>
+        <div className="card">
+          <ObjectCard object={object} classNameCard="" classNameIndicator="" />
           <div ref={swipeFeedbackRef} className="swipe-feedback"></div>
           <div className="card__botom">
             <div className="card__top">
@@ -149,7 +91,7 @@ const SwipeCard = ({
                   className="card__button card__button--info"
                   onTouchEndCapture={(e) => {
                     e.stopPropagation();
-                    setTimeout(handleDetailsClick,70);
+                    setTimeout(handleDetailsClick, 70);
                   }}
                   onTouchStartCapture={(e) => {
                     e.stopPropagation();
@@ -164,7 +106,7 @@ const SwipeCard = ({
               </div>
             </div>
             <div className="card__info">
-              <ObjectDetails styleClass=""/>
+              <ObjectDetails styleClass="" />
               <p className="card__info-time">Сегодня 16:40</p>
             </div>
           </div>
