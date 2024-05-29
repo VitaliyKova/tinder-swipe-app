@@ -6,6 +6,7 @@ import SelectionBloc from "../selectionBlock/SelectionBlock";
 import FullInfo from "../FullInfo/FullInfo";
 import globalObject from "../fietch/globalObject";
 import Navigator from "../navigator/Navigator";
+import StoriesList from "../storiesList/StoriesList";
 import Filter from "../filter/Filter";
 import "./app.css";
 import BotomBlock from "../botomBlock/BotomBlock";
@@ -97,8 +98,8 @@ function App() {
             <div className="app">
               <UpperBlock
                 country={globalObject.name}
-                brocker={globalObject.brockersReels}
               />
+              <StoriesList brockers={globalObject.brockersReels}/>
               <SelectionBloc />
               <Filter aparts={globalObject.aparts} />
               <div className="cardContainer">
