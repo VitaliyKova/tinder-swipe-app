@@ -6,20 +6,19 @@ function StoriesList({ brockers }) {
     <div className="stories">
       <div className="stories__items">
         {brockers.map((field) => (
-          <div className="stories__box">
+          <div className="stories__box" key={field.id}>
             <div
-            key={field.id}
-            className={`stories__item ${
-              field.viewedStor ? "stories__item--unviewed" : ""
-            }`}
-          >
-            <img
-              className="stories__item-img"
-              src={field.imgReels}
-              alt={field.name}
-            />
-          </div>
-          <p className="stories__name">{field.name}</p>
+              className={`stories__item ${
+                field.viewedStor ? "stories__item--unviewed" : ""
+              }`}
+            >
+              <img
+                className="stories__item-img"
+                src={field.imgReels}
+                alt={field.name}
+              />
+            </div>
+            <p className="stories__name">{field.name}</p>
           </div>
         ))}
       </div>

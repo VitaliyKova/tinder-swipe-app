@@ -23,8 +23,8 @@
 .stories__item {
   flex: 0 0 auto;
   margin: 0 3.5px;
-  width: 16vw;
-  height: 16vw;
+  width: 14vw;
+  height: 14vw;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -40,4 +40,8 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.stories__name {
+  font-size: 10px;
+  font-weight: 300;
 }/*# sourceMappingURL=storiesList.css.map */

@@ -12,10 +12,10 @@
 }
 .upperBlock__icon {
   position: absolute;
-  left: 20px;
+  right: 25px;
 }
 .upperBlock__heading {
   text-align: center;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 15px;
 }/*# sourceMappingURL=upperBlock.css.map */

@@ -1,41 +1,24 @@
 @import url("../../fonts.css");
-.selectionBlock {
+.selection {
   display: flex;
   justify-content: space-around;
   margin-bottom: 18px;
 }
-.selectionBlock__left {
-  position: relative;
-  transition: transform 0.1s;
+.selection__button {
+  padding: 4px 0;
+  width: 106px;
+  background-color: rgb(231, 231, 231);
+  transition: all 0.2s;
+  border: none;
+  border-radius: 10px;
 }
-.selectionBlock__left:active {
+.selection__button:active {
   transform: scale(0.93);
+  background-color: rgb(8, 199, 176);
 }
-.selectionBlock__right {
-  transition: transform 0.1s;
-  position: relative;
-}
-.selectionBlock__right:active {
-  transform: scale(0.93);
-}
-.selectionBlock__img {
-  box-shadow: 0px 4px 7.7px 0px rgba(115, 115, 115, 0.45);
-  border-radius: 20px;
-}
-.selectionBlock__title {
-  position: absolute;
-  top: 50%;
-  font-size: 18px;
-  font-weight: 700;
-  color: rgb(255, 255, 255);
-  text-shadow: 2px 2px 2px #000000;
+.selection__button-title {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgb(0, 0, 0);
   border-radius: 2;
-}
-.selectionBlock__title.left {
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.selectionBlock__title.right {
-  right: 50%;
-  transform: translate(50%, -50%);
 }/*# sourceMappingURL=selectionBlock.css.map */

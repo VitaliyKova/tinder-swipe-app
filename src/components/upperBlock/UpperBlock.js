@@ -7,8 +7,8 @@ function UpperBlock({ country }) {
   return (
     <div className="upperBlock">
       <div className="upperBlock__header">
-        <FontAwesomeIcon icon={faArrowUpFromBracket} className="upperBlock__icon"/>
         <h3 className="upperBlock__heading">{country}</h3>
+        <FontAwesomeIcon icon={faArrowUpFromBracket} className="upperBlock__icon"/>
       </div>
     </div>
   );

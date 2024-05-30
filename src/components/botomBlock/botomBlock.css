@@ -8,7 +8,7 @@
 .brocker {
   margin-left: 11px;
   width: 49vw;
-  height: 20vw;
+  height: 7.7vh;
   border-radius: 15px;
   display: flex;
   justify-content: start;
@@ -34,12 +34,12 @@
 .brocker__name {
   color: rgb(37, 43, 92);
   max-width: 30%;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
 }
 .brocker__type {
   color: rgb(83, 88, 122);
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 300;
 }
 

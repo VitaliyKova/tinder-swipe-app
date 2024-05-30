@@ -38,7 +38,7 @@
 .card__price {
   color: #ffffff;
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 300;
 }
 .card__status {
   color: #ffffff;
@@ -78,7 +78,7 @@
   max-width: 17px;
 }
 .card__info-time {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
   color: #ffffff;
 }
