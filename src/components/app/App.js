@@ -90,7 +90,7 @@ function App() {
   };
 
   return (
-    <Router basename="/tinder-swipe-app">
+    <Router >
       <Routes>
         <Route
           path="/"
