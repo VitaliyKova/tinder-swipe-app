@@ -10,38 +10,178 @@ import StoriesList from "../storiesList/StoriesList";
 import Filter from "../filter/Filter";
 import "./app.css";
 import BotomBlock from "../botomBlock/BotomBlock";
+import LoadingSpiner from "../LoadingSpiner/LoadingSpiner";
+
+// function App() {
+//   const [lastDirection, setLastDirection] = useState();
+//   const [history, setHistory] = useState([]);
+//   const [currentList, setCurrentList] = useState(globalObject.aparts);
+//   const [currentBrockerList, setCurrentBrockerList] = useState(
+//     globalObject.aparts
+//   );
+//   const [currentBrocker, setCurrentBrocker] = useState(
+//     currentList[currentList.length > 0 ? currentList.length - 1 : null]
+//   );
+
+//   useEffect(() => {
+//     if (currentList.length > 0) {
+//       setCurrentBrocker(
+//         currentList[currentList.length > 0 ? currentList.length - 1 : null]
+//       );
+//     }
+//   }, [history]);
+
+//   const preloadImages = () => {
+//     globalObject.aparts.forEach((apartment) => {
+//       apartment.url.forEach((src) => {
+//         const img = new Image();
+//         img.src = src;
+//       });
+//     });
+//   };
+
+//   useEffect(() => {
+//     preloadImages();
+//   }, []);
+
+//   const swiped = (direction, aparts) => {
+//     setLastDirection(direction);
+
+//     setCurrentBrockerList((prevList) => {
+//       const newList = prevList.filter((object) => object.id !== aparts.id);
+//       if (newList.length > 0) {
+//         setCurrentBrocker(newList[newList.length - 1] || null);
+//       }
+//       return newList;
+//     });
+//   };
+
+//   const outOfFrame = (idToDelete) => {
+//     setCurrentList((prevList) => {
+//       const card = prevList.find((object) => object.id === idToDelete);
+//       if (card) {
+//         setHistory((prevHistory) => [...prevHistory, card]);
+//       }
+//       const newList = prevList.filter((object) => object.id !== idToDelete);
+//       return newList;
+//     });
+//   };
+
+//   const resetCards = () => {
+//     setCurrentList(globalObject.aparts);
+//     setHistory([]);
+//   };
+
+//   const restorePrevious = () => {
+//     setHistory((prevHistory) => {
+//       if (prevHistory.length > 0) {
+//         const previousCard = prevHistory[prevHistory.length - 1];
+//         setCurrentList((prevList) => {
+//           // Проверяем, чтобы не было дубликатов
+//           if (!prevList.some((object) => object.id === previousCard.id)) {
+//             return [...prevList, previousCard];
+//             // Добавляем карточку в конец списка
+//           }
+//           return prevList;
+//         });
+//         return prevHistory.slice(0, -1);
+//       }
+//       return prevHistory;
+//     });
+//   };
+
+//   return (
+//     <Router >
+//       <Routes>
+//         <Route
+//           path="/"
+//           element={
+//             <div className="app">
+//               <UpperBlock
+//                 country={globalObject.name}
+//               />
+//               <StoriesList brockers={globalObject.brockersReels}/>
+//               <SelectionBloc />
+//               <Filter aparts={globalObject.aparts} />
+//               <div className="cardContainer">
+//                 {currentList.map((object) => (
+//                   <SwipeCard
+//                     key={object.id}
+//                     object={object}
+//                     onSwipe={swiped}
+//                     onCardScreen={outOfFrame}
+//                     restorePrevious={restorePrevious}
+//                     history={history}
+//                   />
+//                 ))}
+//                 {currentList.length === 0 && (
+//                   <div>
+//                     <p className="cardContainer__text">
+//                       Вы просмотрели все варианты!
+//                     </p>
+//                     <button
+//                       onClick={resetCards}
+//                       className="cardContainer__reset-button"
+//                     >
+//                       Показать сначала
+//                     </button>
+//                   </div>
+//                 )}
+//               </div>
+//               {currentList.length >= 1 && (
+//                 <BotomBlock brocker={currentBrocker} />
+//               )}
+//             </div>
+//           }
+//         />
+//         <Route path="/FullInfo/:id" element={<FullInfo />} />
+//       </Routes>
+//       <Navigator/>
+//     </Router>
+//   );
+// }
+
+// export default App;
 
 function App() {
   const [lastDirection, setLastDirection] = useState();
   const [history, setHistory] = useState([]);
-  const [currentList, setCurrentList] = useState(globalObject.aparts);
-  const [currentBrockerList, setCurrentBrockerList] = useState(
-    globalObject.aparts
-  );
-  const [currentBrocker, setCurrentBrocker] = useState(
-    currentList[currentList.length > 0 ? currentList.length - 1 : null]
-  );
+  const [currentList, setCurrentList] = useState([]);
+  const [currentBrockerList, setCurrentBrockerList] = useState([]);
+  const [currentBrocker, setCurrentBrocker] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const preloadImages = () => {
+      return Promise.all(
+        globalObject.aparts.map((apartment) =>
+          Promise.all(
+            apartment.url.map((src) => {
+              return new Promise((resolve) => {
+                const img = new Image();
+                img.src = src;
+                img.onload = resolve;
+                img.onerror = resolve;
+              });
+            })
+          )
+        )
+      );
+    };
+
+    preloadImages().then(() => {
+      setCurrentList(globalObject.aparts);
+      setCurrentBrockerList(globalObject.aparts);
+      setCurrentBrocker(globalObject.aparts[globalObject.aparts.length - 1] || null);
+      setLoading(false);
+    });
+  }, []);
 
   useEffect(() => {
     if (currentList.length > 0) {
-      setCurrentBrocker(
-        currentList[currentList.length > 0 ? currentList.length - 1 : null]
-      );
+      setCurrentBrocker(currentList[currentList.length - 1] || null);
     }
   }, [history]);
-
-  const preloadImages = () => {
-    globalObject.aparts.forEach((apartment) => {
-      apartment.url.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-      });
-    });
-  };
-
-  useEffect(() => {
-    preloadImages();
-  }, []);
 
   const swiped = (direction, aparts) => {
     setLastDirection(direction);
@@ -76,10 +216,8 @@ function App() {
       if (prevHistory.length > 0) {
         const previousCard = prevHistory[prevHistory.length - 1];
         setCurrentList((prevList) => {
-          // Проверяем, чтобы не было дубликатов
           if (!prevList.some((object) => object.id === previousCard.id)) {
             return [...prevList, previousCard];
-            // Добавляем карточку в конец списка
           }
           return prevList;
         });
@@ -90,52 +228,54 @@ function App() {
   };
 
   return (
-    <Router >
+    <Router>
       <Routes>
         <Route
           path="/"
           element={
-            <div className="app">
-              <UpperBlock
-                country={globalObject.name}
-              />
-              <StoriesList brockers={globalObject.brockersReels}/>
-              <SelectionBloc />
-              <Filter aparts={globalObject.aparts} />
-              <div className="cardContainer">
-                {currentList.map((object) => (
-                  <SwipeCard
-                    key={object.id}
-                    object={object}
-                    onSwipe={swiped}
-                    onCardScreen={outOfFrame}
-                    restorePrevious={restorePrevious}
-                    history={history}
-                  />
-                ))}
-                {currentList.length === 0 && (
-                  <div>
-                    <p className="cardContainer__text">
-                      Вы просмотрели все варианты!
-                    </p>
-                    <button
-                      onClick={resetCards}
-                      className="cardContainer__reset-button"
-                    >
-                      Показать сначала
-                    </button>
-                  </div>
+            loading ? (
+              <LoadingSpiner />
+            ) : (
+              <div className="app">
+                <UpperBlock country={globalObject.name} />
+                <StoriesList brockers={globalObject.brockersReels} />
+                <SelectionBloc />
+                <Filter aparts={globalObject.aparts} />
+                <div className="cardContainer">
+                  {currentList.map((object) => (
+                    <SwipeCard
+                      key={object.id}
+                      object={object}
+                      onSwipe={swiped}
+                      onCardScreen={outOfFrame}
+                      restorePrevious={restorePrevious}
+                      history={history}
+                    />
+                  ))}
+                  {currentList.length === 0 && (
+                    <div>
+                      <p className="cardContainer__text">
+                        Вы просмотрели все варианты!
+                      </p>
+                      <button
+                        onClick={resetCards}
+                        className="cardContainer__reset-button"
+                      >
+                        Показать сначала
+                      </button>
+                    </div>
+                  )}
+                </div>
+                {currentList.length >= 1 && (
+                  <BotomBlock brocker={currentBrocker} />
                 )}
               </div>
-              {currentList.length >= 1 && (
-                <BotomBlock brocker={currentBrocker} />
-              )}
-            </div>
+            )
           }
         />
         <Route path="/FullInfo/:id" element={<FullInfo />} />
       </Routes>
-      <Navigator/>
+      <Navigator />
     </Router>
   );
 }
