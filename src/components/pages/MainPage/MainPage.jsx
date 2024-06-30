@@ -3,9 +3,7 @@ import React, { useEffect, useState } from "react";
 import SwipeCard from "../../swipeCard/SwipeCard";
 import UpperBlock from "../../upperBlock/UpperBlock";
 import SelectionBloc from "../../selectionBlock/SelectionBlock";
-
 import globalObject from "../../fietch/globalObject";
-
 import StoriesList from "../../storiesList/StoriesList";
 import Filter from "../../filter/Filter";
 import BotomBlock from "../../botomBlock/BotomBlock";
