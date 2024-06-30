@@ -9,33 +9,4 @@ html, body {
 
 #root {
   background-color: white;
-}
-
-.app {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.cardContainer {
-  position: relative;
-  width: 95%;
-  margin: 0 auto;
-  height: 40%;
-}
-.cardContainer__text {
-  text-align: center;
-  padding-top: 18%;
-}
-.cardContainer__reset-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: none;
-  padding: 30px;
-  border-radius: 50px;
-  font-size: 16px;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
 }/*# sourceMappingURL=app.css.map */
