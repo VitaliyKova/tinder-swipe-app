@@ -102,7 +102,7 @@ function MainPage() {
         <UpperBlock country={globalObject.name} />
         <StoriesList brockers={globalObject.brockersReels} />
         <SelectionBloc />
-        <Filter aparts={globalObject.aparts} />
+        <Filter aparts={globalObject.aparts} filterText={"Свежие предложения" }/>
         <div className="cardContainer">
           {currentList.map((object) => (
             <SwipeCard
