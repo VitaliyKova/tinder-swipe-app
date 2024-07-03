@@ -12,7 +12,6 @@ import SwipeCard from "../../swipeCard/SwipeCard";
 const AgentPage = () => {
     
     const { id } = useParams();
-    const navigate = useNavigate();
     const [isExpended, setIsExpended] = useState(false);
     const apartment = globalObject.aparts.find((ap) => ap.id === parseInt(id));
     const [lastDirection, setLastDirection] = useState();
