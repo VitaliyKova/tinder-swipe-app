@@ -106,7 +106,7 @@ const AgentPage = () => {
     };
 
     return (
-        <div className="full-info">
+        <div className="full-info agent-full-info">
             <div className="full-info__card">
                 <Header brocker={apartment}/>
                 <Filter aparts={globalObject.aparts} filterText={"Объектов"}/>

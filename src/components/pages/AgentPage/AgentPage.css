@@ -1,8 +1,12 @@
-.full-info__card {
-    position: relative;
-    height: 500px;
-    margin-bottom: 140px;
+.agent-full-info {
+    .full-info__card {
+        position: relative;
+        height: 500px;
+        margin-bottom: 140px;
+    }
 }
+
+
 
 .cardContainerAgent {
     position: relative;
