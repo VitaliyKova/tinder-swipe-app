@@ -22,7 +22,7 @@ const FullAgentPage = () => {
                         <div className="agent-inner">
                             <img onClick={() => handleOnClick(apartment.id)} className="full_agent-img"
                                  src={apartment.brockerAvatar} alt=""/>
-                            <p>{apartment.brocker} </p>
+                            <p className='name_brocker'>{apartment.brocker} </p>
                         </div>
                     </div>
                 ))}

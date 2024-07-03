@@ -42,3 +42,14 @@
     align-items: center;
     gap: 10px;
 }
+
+.name_brocker {
+    color: var(--Grey---Dark, #252B5C);
+    text-align: center;
+    font-family: "New Rubrik";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.42px;
+}
