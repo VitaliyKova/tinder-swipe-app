@@ -7,10 +7,7 @@ const Header = ({ brocker }) => {
     const navigate = useNavigate();
     const [currentPath, setCurrentPath] = useState(location.pathname);
 
-    useEffect(() => {
-        setCurrentPath(location.pathname);
-        console.log(location.pathname)
-    }, [location.pathname]);
+
 
     // Функция для проверки соответствия текущего пути заданному шаблону
     const isActive = (pathPattern) => {
