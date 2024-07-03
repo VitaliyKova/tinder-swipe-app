@@ -1,20 +1,132 @@
 .header {
-  padding: 0 40px;
+  padding: 30px 15px 20px 20px;
 }
 
 .header-top {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-
+  margin-bottom: 34px;
 }
 
 .header-left {
   display: flex;
   align-items: center;
+  gap: 15px;
+}
+
+.share-header {
+  height: 48px;
 }
 
 .nav {
   display: flex;
   gap: 18px;
+  margin-bottom: 35px;
 }
+
+.brocker-inner {
+  position: relative;
+}
+
+.brocker__online {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.button_background_none {
+  background: none;
+  border: none;
+}
+
+.header__button--back {
+
+  position: absolute;
+  left: 0;
+}
+
+.subscride_header {
+  border-radius: 12px;
+  background: var(--Radial, radial-gradient(142.94% 142.94% at 0% -16.28%, #11CF74 4.69%, #08C7B0 98.31%));
+  border: none;
+  color: #FFF;
+  font-family: "New Rubrik";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  display: flex;
+  width: 103px;
+  height: 23px;
+  padding: 8px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.info-header {
+  display: flex;
+  align-items: flex-start;
+  height: 50px;
+}
+
+.brocker__img-header {
+  width: 15vw;
+  height: 7vh;
+  margin-left: 35px;
+  object-fit: cover;
+  border-radius: 50px;
+}
+.brocker__info {
+  gap: 11px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-left: 11px;
+}
+
+.brocker__name {
+  color: var(--Grey---Dark, #252B5C);
+  text-align: center;
+  font-family: "New Rubrik";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.42px;
+}
+
+.nav a {
+  text-decoration: none;
+  position: relative;
+  color: var(--Color, #434343);
+  font-family: "New Rubrik";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.nav a.active {
+  color: var(--Color, #434343);
+
+  font-family: "New Rubrik";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; /* Расстояние от текста до точки */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px; /* Ширина точки */
+  height: 6px; /* Высота точки */
+  background-color: #000; /* Цвет точки */
+  border-radius: 50%; /* Округление углов для создания точки */
+}
+

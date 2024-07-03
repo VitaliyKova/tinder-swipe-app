@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from "react";
-import globalObject from "../fietch/globalObject";
-import {Link, useNavigate, useParams} from "react-router-dom";
-import './Header.css'
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import './Header.css';
 
 const Header = ({ brocker }) => {
-    const { id } = useParams();
-    const agent = globalObject.aparts.find((ap) => ap.id === parseInt(id));
+    const location = useLocation();
     const navigate = useNavigate();
+    const [currentPath, setCurrentPath] = useState(location.pathname);
 
+    useEffect(() => {
+        setCurrentPath(location.pathname);
+        console.log(location.pathname)
+    }, [location.pathname]);
+
+    // Функция для проверки соответствия текущего пути заданному шаблону
+    const isActive = (pathPattern) => {
+        const regex = new RegExp(`^${pathPattern.replace(/:\w+/g, '\\d+')}$`);
+        return regex.test(currentPath);
+    };
 
     return (
         <div className="header">
@@ -16,35 +24,44 @@ const Header = ({ brocker }) => {
                 <div className="header-left">
                     <button
                         onTouchEnd={() => navigate(-1)}
-                        className="full-info__button full-info__button--back"
+                        className="header__button header__button--back button_background_none"
                     >
                         <img
-                            className="full-info__button-img-back"
-                            src={process.env.PUBLIC_URL + "/images/icon_backPage.svg"}
+                            className="header__button-img-back"
+                            src={process.env.PUBLIC_URL + "/images/Back_Solid.svg"}
                             alt="icon back page"
                         />
                     </button>
-                    <img className="brocker__img" src={brocker.brockerAvatar} alt=""/>
+                    <div className="brocker-inner">
+                        <img className="brocker__img-header" src={brocker.brockerAvatar} alt=""/>
+                        <img className="brocker__online" src={process.env.PUBLIC_URL + "/images/online.svg"}/>
+                    </div>
                     <div className="brocker__info">
                         <p className="brocker__name">{brocker.brocker}</p>
-                        <div>Подписаться</div>
+                        <button className="subscride_header">Подписаться</button>
                     </div>
-                    <div className='info-header'>Info</div>
+                    <div className='info-header'>
+                        <button className="button_background_none info-header">
+                            <img src={process.env.PUBLIC_URL + "/images/Vector.svg"}/>
+                        </button>
+                    </div>
                 </div>
                 <div className="header-right">
-
-                    <div className='share-header'>To share</div>
+                    <div className='share-header'>
+                        <button className="button_background_none">
+                            <img className='share-header' src={process.env.PUBLIC_URL + "/images/Share.svg"}/>
+                        </button>
+                    </div>
                 </div>
             </div>
 
             <nav className="nav">
-                <Link to="#">Объекты</Link>
-                <Link to="/">Подборки</Link>
-                <Link to="#">Видео</Link>
+                <Link to={`/Agent/${brocker.id}`} className={isActive(`/Agent/${brocker.id}`) ? "active" : ""}>Объекты</Link>
+                <Link to="/collections" className={currentPath === "/" || currentPath === "/collections" ? "active" : ""}>Подборки</Link>
+                <Link to="/videos" className={currentPath === "/videos" ? "active" : ""}>Видео</Link>
             </nav>
         </div>
-
-    )
+    );
 }
 
 export default Header;
