@@ -40,9 +40,9 @@
 }
 
 .header__button--back {
-
   position: absolute;
   left: 0;
+  z-index: 4;
 }
 
 .subscride_header {
