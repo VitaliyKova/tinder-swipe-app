@@ -16,6 +16,7 @@
     width: 80px;
     height: 78px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .full_rating {
