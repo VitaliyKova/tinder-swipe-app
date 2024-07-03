@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./selectionBlock.css";
+import {Link} from "react-router-dom";
 
 
 function SelectionBloc() {
@@ -9,7 +10,7 @@ function SelectionBloc() {
         <p className="selection__button-title">Подборки</p>
       </button>
       <button className="selection__button">
-        <p className="selection__button-title">Агенты</p>
+        <Link to={'/full_agent'} className="selection__button-title">Агенты</Link>
       </button>
     </div>
   );

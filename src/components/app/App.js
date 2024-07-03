@@ -6,6 +6,7 @@ import AgentPage from "../pages/AgentPage";
 import "./app.css";
 import CountryPage from "../pages/CountryPage/CountryPage";
 import { qr } from "../resorces/resources";
+import FullAgentPage from "../pages/FullAgentPage";
 
 function App() {
   const [isMobileView, setIsMobileView] = useState(window.innerWidth < 500);
@@ -30,6 +31,7 @@ function App() {
             <Route path="/home" element={<MainPage />} />
             <Route path="/FullInfo/:id" element={<FullInfo />} />
             <Route path="/agent/:id" element={<AgentPage />} />
+              <Route path="/full_agent" element={<FullAgentPage />} />
           </Routes>
         </Router>
       ) : (
