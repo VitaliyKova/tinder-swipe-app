@@ -3,11 +3,11 @@ import styles from './MapHome.module.css';
 import { map } from '../resorces/resources';
 
 const countryCoordinates = {
-  Turkey: { x: 40, y: 38 },
-  UAE: { x: 51, y: 42.7 },
-  Italy: { x: 27, y: 37.7 },
-  Maldy: { x: 64, y: 50 },
-  Tailand: { x: 77, y: 45 }
+  Турция: { x: 40, y: 38 },
+  ОАЭ: { x: 51, y: 42.7 },
+  Италия: { x: 27, y: 37.7 },
+  Мальдивы: { x: 64, y: 50 },
+  Таиланд: { x: 77, y: 45 }
   // Добавьте координаты других стран здесь
 };
 

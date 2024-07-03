@@ -25,8 +25,8 @@
 
 .marker {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   border: 2px solid #ffffff;
   background-color: rgba(63, 200, 118, 0.5019607843);
   border-radius: 50%;
