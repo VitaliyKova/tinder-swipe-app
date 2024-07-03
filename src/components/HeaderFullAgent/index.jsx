@@ -20,7 +20,7 @@ const HeaderFullAgent = ({ brocker }) => {
             <div className="header-top header-top_agent">
                 <div className="header-left">
                     <button
-                        onTouchEnd={() => navigate(-1)}
+                        onTouchEnd={() => navigate('/home')}
                         className="header__button header__button--back button_background_none"
                     >
                         <img
