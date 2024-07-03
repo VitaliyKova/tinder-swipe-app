@@ -31,7 +31,7 @@ function App() {
             <Route path="/home" element={<MainPage />} />
             <Route path="/FullInfo/:id" element={<FullInfo />} />
             <Route path="/agent/:id" element={<AgentPage />} />
-              <Route path="/full_agent" element={<FullAgentPage />} />
+            <Route path="/full_agent" element={<FullAgentPage />} />
           </Routes>
         </Router>
       ) : (
