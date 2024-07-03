@@ -227,7 +227,7 @@ const globalObject = {
         url: [
           process.env.PUBLIC_URL + "/images/aparts2.png",
           process.env.PUBLIC_URL + "/images/aparts3.png",
-          process.env.PUBLIC_URL + "/images/aparts4.png",
+          process.env.PUBLIC_URL + "/images/aparts4.jpeg",
           process.env.PUBLIC_URL + "/images/aparts5.png",
           process.env.PUBLIC_URL + "/images/aparts6.png",
         ],
@@ -295,7 +295,7 @@ const globalObject = {
         ],
         url: [
           process.env.PUBLIC_URL + "/images/aparts3.png",
-          process.env.PUBLIC_URL + "/images/aparts4.png",
+          process.env.PUBLIC_URL + "/images/aparts4.jpeg",
           process.env.PUBLIC_URL + "/images/aparts5.png",
           process.env.PUBLIC_URL + "/images/aparts6.png",
           process.env.PUBLIC_URL + "/images/aparts7.png",
