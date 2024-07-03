@@ -108,6 +108,17 @@
   line-height: normal;
 }
 
+.nav div {
+  text-decoration: none;
+  position: relative;
+  color: var(--Color, #434343);
+  font-family: "New Rubrik";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
 .nav a.active {
   color: var(--Color, #434343);
 
