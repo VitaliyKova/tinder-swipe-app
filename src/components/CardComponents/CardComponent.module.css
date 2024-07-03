@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .cardContainer {
   width: 100vw;
-  bottom: 100px;
+  bottom: 75px;
   position: absolute;
 }
 
