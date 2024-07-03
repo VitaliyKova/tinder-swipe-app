@@ -1,10 +1,12 @@
 import React from "react";
 import "./botomBlock.css";
+import { useNavigate } from "react-router-dom";
 
 function BotomBlock({ brocker }) {
+  const navigate = useNavigate();
   return (
     <div className="botom-block">
-      <div className="brocker">
+      <div className="brocker" onClick={() => navigate(`/agent/${brocker?.id}`)}>
         <img className="brocker__img" src={brocker?.brockerAvatar} alt="" />
         <div className="brocker__info">
           <p className="brocker__name">{brocker?.brocker}</p>

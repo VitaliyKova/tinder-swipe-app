@@ -1,10 +1,12 @@
 import React from "react";
 import "./navigator.css";
+import { useNavigate } from "react-router-dom";
 
 function Navigator() {
+  const navigate = useNavigate();
   return (
     <div className="navigator">
-      <button className="navigator__button navigator__button-world">
+      <button className="navigator__button navigator__button-world" onClick={() => navigate('/')}>
         <svg
           width="25"
           height="25"

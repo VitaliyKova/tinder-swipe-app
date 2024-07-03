@@ -4,18 +4,34 @@
   top: 40px;
   z-index: 1;
   justify-content: center;
-  padding: 20px;
+  align-items: center;
+  padding: 15px;
   background-color: white;
   border-radius: 21px;
-  width: 70%;
+  width: 67%;
+  gap: 10px;
+  box-shadow: 0px 14.335px 67.459px 0px rgba(31, 76, 107, 0.7);
 }
 
 .input {
   width: 100%;
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  outline: none;
 }
 .input::-moz-placeholder {
+  color: #a1a5c1;
   font-size: 10px;
+  letter-spacing: 0.304px;
 }
 .input::placeholder {
+  color: #a1a5c1;
   font-size: 10px;
+  letter-spacing: 0.304px;
+}
+
+.button {
+  background: none;
+  border: none;
 }/*# sourceMappingURL=SearchField.module.css.map */

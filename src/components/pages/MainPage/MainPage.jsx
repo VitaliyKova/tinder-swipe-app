@@ -8,6 +8,7 @@ import StoriesList from "../../storiesList/StoriesList";
 import Filter from "../../filter/Filter";
 import BotomBlock from "../../botomBlock/BotomBlock";
 import LoadingSpiner from "../../LoadingSpiner/LoadingSpiner";
+import Navigator from "../../navigator/Navigator";
 import "./MainPage.css";
 
 function MainPage() {
@@ -131,6 +132,7 @@ function MainPage() {
         {currentList.length >= 1 && (
           <BotomBlock brocker={currentBrocker} />
         )}
+        <Navigator/>
       </div>
     )
   );

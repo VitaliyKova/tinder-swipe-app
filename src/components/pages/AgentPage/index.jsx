@@ -1,12 +1,8 @@
 import {React, useEffect, useState} from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import globalObject from "../../fietch/globalObject";
-import ObjectCard from "../../obgectCard/ObjectCard";
-
+import Navigator from "../../navigator/Navigator";
 import BotomBlock from "../../botomBlock/BotomBlock";
-import ObjectDetails from "../../objectDetails/ObjectDetails";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 import Filter from "../../filter/Filter";
 import Header from "../../Header";
 import './AgentPage.css'
@@ -14,6 +10,7 @@ import SwipeCard from "../../swipeCard/SwipeCard";
 
 
 const AgentPage = () => {
+    
     const { id } = useParams();
     const navigate = useNavigate();
     const [isExpended, setIsExpended] = useState(false);
@@ -137,6 +134,7 @@ const AgentPage = () => {
                 </div>
             </div>
             <BotomBlock brocker={apartment}/>
+            <Navigator/>
         </div>
     );
 }
