@@ -14,7 +14,7 @@ const FullAgentPage = () => {
 
     return (
         <>
-            <HeaderFullAgent title={"Витрина агентов"}/>
+            <HeaderFullAgent title={"Витрина агентов"} nav={true}/>
             <div className="apartment-list">
                 {apartments.map((apartment, index) => (
                     <div key={apartment.id} className="apartment-item">

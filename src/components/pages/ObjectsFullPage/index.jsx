@@ -3,6 +3,7 @@ import HeaderFullAgent from "../../HeaderFullAgent";
 import globalObject from "../../fietch/globalObject";
 import {useNavigate} from "react-router-dom";
 import './ObjectsFull.css'
+import Filter from "../../filter/Filter";
 
 const FullAgentPage = () => {
     const apartments = globalObject.aparts;
@@ -14,7 +15,8 @@ const FullAgentPage = () => {
 
     return (
         <>
-            <HeaderFullAgent title={"Подборки в Турции"}/>
+            <HeaderFullAgent title={"Подборки в Турции"} nav={false}/>
+            <Filter aparts={globalObject.aparts} filterText={"Объектов"}/>
             <div className="object-list">
                 {apartments.map((apartment, index) => (
                     <div key={apartment.id} className="object-item">

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import './Header.css';
 
-const HeaderFullAgent = ({ title }) => {
+const HeaderFullAgent = ({ title, nav }) => {
     const location = useLocation();
     const navigate = useNavigate();
     const [currentPath, setCurrentPath] = useState(location.pathname);
@@ -38,10 +38,15 @@ const HeaderFullAgent = ({ title }) => {
             </div>
 
             <nav className="nav nav_full">
-                <Link to={`/full_agent`} className={isActive(`/full_agent`) ? "active_all" : "all_agent"}>Все агенты</Link>
-                <div>Турция</div>
-                <div>Северный Кипр</div>
-                <div>Дубай</div>
+                {nav ? (
+                    <>
+                        <Link to={`/full_agent`} className={isActive(`/full_agent`) ? "active_all" : "all_agent"}>Все
+                            агенты</Link>
+                        <div>Турция</div>
+                        <div>Северный Кипр</div>
+                        <div>Дубай</div>
+                    </>
+                ) : ''}
             </nav>
         </div>
     );
