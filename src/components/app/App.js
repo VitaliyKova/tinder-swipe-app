@@ -7,6 +7,7 @@ import "./app.css";
 import CountryPage from "../pages/CountryPage/CountryPage";
 import { qr } from "../resorces/resources";
 import FullAgentPage from "../pages/FullAgentPage";
+import Chat from "../pages/Chat/Chat";
 
 function App() {
   const [isMobileView, setIsMobileView] = useState(window.innerWidth < 500);
@@ -32,6 +33,7 @@ function App() {
             <Route path="/FullInfo/:id" element={<FullInfo />} />
             <Route path="/agent/:id" element={<AgentPage />} />
             <Route path="/full_agent" element={<FullAgentPage />} />
+            <Route path="/chat/:id" element={<Chat />} />
           </Routes>
         </Router>
       ) : (

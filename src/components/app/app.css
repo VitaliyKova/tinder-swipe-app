@@ -7,20 +7,15 @@ html, body {
   height: 100%;
 }
 
+#root {
+  background-color: white;
+}
+
 .qr-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full height of the viewport */
-  background-color: #f0f0f0; /* Optional: background color for the QR code page */
+  max-width: 50vw;
+  margin: 200px auto;
 }
 
 .qr-image {
-  max-width: 80%; /* Adjust the size as needed */
-  height: auto;
-}
-
-
-#root {
-  background-color: white;
+  max-width: 40vw;
 }/*# sourceMappingURL=app.css.map */

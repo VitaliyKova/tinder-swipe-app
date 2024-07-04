@@ -1,0 +1,84 @@
+.container {
+  background: rgba(245, 244, 248, 0.5);
+  height: 93vh;
+}
+
+.date {
+  padding-top: 17px;
+  color: #555;
+  text-align: center;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.3px;
+}
+
+.message {
+  display: flex;
+  justify-content: end;
+  padding-right: 10px;
+}
+
+.inputBox {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 10px;
+  background-color: white;
+  width: 85%;
+  padding: 4px 10px 3px 10px;
+  border-radius: 100px;
+}
+
+.input {
+  width: 80%;
+  border: none;
+  outline: none;
+}
+
+.photo {
+  padding: 10px;
+  background: var(
+    --Radial,
+    radial-gradient(
+      142.94% 142.94% at 0% -16.28%,
+      #11cf74 4.69%,
+      #08c7b0 98.31%
+    )
+  );
+  border-radius: 50%;
+}
+
+.modalBox {
+  background: rgba(55, 173, 102, 0.67);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+}
+
+.modalBody {
+  position: absolute;
+  background-color: white;
+  height: 85%;
+  bottom: 0;
+  width: 100vw;
+  border-radius: 50px 50px 0 0;
+
+  &::after {
+    content: "";
+    width: 20%;
+    height: 3px;
+    background: #53587a;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50px;
+  }
+}

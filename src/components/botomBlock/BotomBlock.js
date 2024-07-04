@@ -13,7 +13,7 @@ function BotomBlock({ brocker }) {
           <p className="brocker__type">Брокер</p>
         </div>
       </div>
-      <button className="mesage">
+      <button className="mesage" onClick={() => navigate(`/chat/${brocker?.id}`)}>
         <img className="mesage__img" src={process.env.PUBLIC_URL + "/images/icon_chat.svg"} alt="icon mesage" />
       </button>
     </div>
