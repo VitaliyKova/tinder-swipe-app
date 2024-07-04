@@ -7,7 +7,7 @@ function SelectionBloc() {
   return (
     <div className="selection">
       <button className="selection__button">
-        <p className="selection__button-title">Подборки</p>
+        <Link to={'/full_objects'} className="selection__button-title">Подборки</Link>
       </button>
       <button className="selection__button">
         <Link to={'/full_agent'} className="selection__button-title">Агенты</Link>

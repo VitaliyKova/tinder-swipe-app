@@ -54,7 +54,7 @@ const Header = ({ brocker }) => {
 
             <nav className="nav">
                 <Link to={`/Agent/${brocker.id}`} className={isActive(`/agent/${brocker.id}`) ? "active" : ""}>Объекты</Link>
-                <div  className={isActive(`/agent/${brocker.id}`) ? "active" : ""}>Подборки</div>
+                <Link to={'/full_objects'} className={isActive(`/full_objects`) ? "active" : ""}>Подборки</Link>
                 <div  className={isActive(`/agent/${brocker.id}`) ? "active" : ""}>Видео</div>
             </nav>
         </div>
