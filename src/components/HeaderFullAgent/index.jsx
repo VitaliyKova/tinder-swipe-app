@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import './Header.css';
 
-const HeaderFullAgent = ({ title, nav }) => {
+const HeaderFullAgent = ({ title, nav , agent }) => {
     const location = useLocation();
     const navigate = useNavigate();
     const [currentPath, setCurrentPath] = useState(location.pathname);
@@ -17,7 +17,7 @@ const HeaderFullAgent = ({ title, nav }) => {
 
     return (
         <div className="header">
-            <div className="header-top header-top_agent">
+            <div className={`header-top ${agent}`}>
                 <div className="header-left">
                     <button
                         onTouchEnd={() => navigate('/home')}

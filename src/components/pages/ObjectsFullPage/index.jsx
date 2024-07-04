@@ -15,7 +15,7 @@ const FullAgentPage = () => {
 
     return (
         <>
-            <HeaderFullAgent title={"Подборки в Турции"} nav={false}/>
+            <HeaderFullAgent title={"Подборки в Турции"} nav={false} agent={'nav-top-object'}/>
             <Filter aparts={globalObject.aparts} filterText={"Объектов"}/>
             <div className="object-list">
                 {apartments.map((apartment, index) => (

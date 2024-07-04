@@ -18,6 +18,12 @@
 
 }
 
+.nav-top-object {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
 .all-like {
     position: absolute;
     bottom: 15px;
