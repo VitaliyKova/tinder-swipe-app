@@ -114,11 +114,12 @@
 .containerApart {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-top: 30px;
   padding: 0 10px;
   gap: 10px;
 }
 
 .aprtModal {
-  width: 48.78%;
+  width: 45%;
 }/*# sourceMappingURL=Chat.module.css.map */
