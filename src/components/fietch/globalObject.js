@@ -80,7 +80,7 @@ const globalObject = {
         brocker: "Алина",
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor1.jpg",
         price: 40000,
-        status: "Продажа",
+        status: "Аренда",
         likeCounter: 52,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
@@ -126,7 +126,7 @@ const globalObject = {
         brocker: "Евгений",
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor3.jpg",
         price: 50000,
-        status: "Продажа",
+        status: "Аренда",
         likeCounter: 22,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
@@ -149,7 +149,7 @@ const globalObject = {
         brocker: "Татьяна",
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor4.jpg",
         price: 50000,
-        status: "Продажа",
+        status: "Аренда",
         likeCounter: 22,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
@@ -241,7 +241,7 @@ const globalObject = {
         brocker: "Алина",
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor1.jpg",
         price: 50000,
-        status: "Продажа",
+        status: "Аренда",
         likeCounter: 22,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
@@ -264,7 +264,7 @@ const globalObject = {
         brocker: "Анна",
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor2.jpg",
         price: 50000,
-        status: "Продажа",
+        status: "Аренда",
         likeCounter: 22,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
