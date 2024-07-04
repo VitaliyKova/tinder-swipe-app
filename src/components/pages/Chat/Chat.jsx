@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Chat.module.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ChatHeader from "../../ChatHeader/ChatHeader";
 import globalObject from "../../fietch/globalObject";
 import ChatLinkApart from "../../ChatLinkApart/ChatLinkApart";
@@ -34,7 +34,7 @@ function Chat() {
   const apartment = globalObject.aparts.find((ap) => ap.id === parseInt(id));
   const currentDate = new Date();
   const formattedDate = formatDate(currentDate);
-
+  const [isModal, setIsModal] = useState(false);
   const [messageVisible, setMessageVisible] = useState(false);
 
   useEffect(() => {
@@ -50,25 +50,44 @@ function Chat() {
       <ChatHeader apartment={apartment} />
       <div className={styles.container}>
         <p className={styles.date}>{formattedDate}</p>
-        <ChatLinkApart apart={apartment} />
+        <div className={styles.topMessage}>
+          <ChatLinkApart apart={apartment} />
+        </div>
         {messageVisible && (
           <div className={styles.message}>
             <ChatMessage />
           </div>
         )}
         <div className={styles.inputBox}>
-          <img src={photo} alt="photo" />
-          <input type="text" placeholder="Напишите сообщение" className={styles.input}/>
+          <img src={photo} alt="photo"  onClick={() => setIsModal(true)}/>
+          <input
+            type="text"
+            placeholder="Напишите сообщение"
+            className={styles.input}
+          />
           <div>
-            <img src={send} alt="send" className={styles.photo}/>
+            <img src={send} alt="send" className={styles.photo} />
           </div>
         </div>
       </div>
-      <div className={styles.modalBox}>
-        <div className={styles.modalBody}>
-          
+      {isModal && (
+        <div className={styles.modalBox} onClick={() => setIsModal(false)}>
+          <div className={styles.modalBody}>
+            <nav className={styles.nav}>
+              <p className={`${styles.activ} ${styles.text}`}>Объекты</p>
+              <p className={styles.text}>Подборки</p>
+              <p className={styles.text}>Видео</p>
+            </nav>
+            <div className={styles.containerApart}>
+              {globalObject.aparts.map((apart, index) => (
+                <div className={styles.aprtModal} key={index} onClick={() => setIsModal(false)}>
+                  <ChatLinkApart apart={apart} />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
