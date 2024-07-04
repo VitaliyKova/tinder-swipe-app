@@ -4,6 +4,7 @@ import globalObject from "../../fietch/globalObject";
 import {useNavigate} from "react-router-dom";
 import './ObjectsFull.css'
 import Filter from "../../filter/Filter";
+import Navigator from "../../navigator/Navigator";
 
 const FullAgentPage = () => {
     const apartments = globalObject.aparts;
@@ -45,6 +46,7 @@ const FullAgentPage = () => {
                         </div>
                     </div>
                 ))}
+                <Navigator/>
             </div>
         </>
     );
