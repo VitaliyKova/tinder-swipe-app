@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import './Header.css';
 
-const HeaderFullAgent = ({ brocker }) => {
+const HeaderFullAgent = ({ title }) => {
     const location = useLocation();
     const navigate = useNavigate();
     const [currentPath, setCurrentPath] = useState(location.pathname);
@@ -31,7 +31,7 @@ const HeaderFullAgent = ({ brocker }) => {
                     </button>
                     <div className='info-header'>
                         <button className="button_background_none info-header">
-                            Витрина агентов
+                            {title}
                         </button>
                     </div>
                 </div>
