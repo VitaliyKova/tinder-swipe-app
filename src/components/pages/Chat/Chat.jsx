@@ -6,6 +6,7 @@ import globalObject from "../../fietch/globalObject";
 import ChatLinkApart from "../../ChatLinkApart/ChatLinkApart";
 import ChatMessage from "../../ChatMessage/ChatMessage";
 import { photo, send } from "../../resorces/resources";
+import ChatNewApart from "../../ChatNewApart/ChatNewApart";
 
 // Функция для форматирования даты
 const formatDate = (date) => {
@@ -36,6 +37,7 @@ function Chat() {
   const formattedDate = formatDate(currentDate);
   const [isModal, setIsModal] = useState(false);
   const [messageVisible, setMessageVisible] = useState(false);
+  const [currentApart, setCurrentApart] = useState(null);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -44,6 +46,11 @@ function Chat() {
 
     return () => clearTimeout(timeout); // Очистка таймера при размонтировании компонента
   }, []);
+
+  const handleClickModal = (apart) => {
+    setCurrentApart(apart);
+    setIsModal(false);
+  };
 
   return (
     <div>
@@ -58,8 +65,13 @@ function Chat() {
             <ChatMessage />
           </div>
         )}
+        {currentApart && (
+          <div className={styles.newMessage}>
+            <ChatNewApart apart={currentApart}/>
+          </div>
+        )}
         <div className={styles.inputBox}>
-          <img src={photo} alt="photo"  onClick={() => setIsModal(true)}/>
+          <img src={photo} alt="photo" onClick={() => setIsModal(true)} />
           <input
             type="text"
             placeholder="Напишите сообщение"
@@ -80,7 +92,11 @@ function Chat() {
             </nav>
             <div className={styles.containerApart}>
               {globalObject.aparts.map((apart, index) => (
-                <div className={styles.aprtModal} key={index} onClick={() => setIsModal(false)}>
+                <div
+                  className={styles.aprtModal}
+                  key={index}
+                  onClick={() => handleClickModal(apart)}
+                >
                   <ChatLinkApart apart={apart} />
                 </div>
               ))}

@@ -122,4 +122,9 @@
 
 .aprtModal {
   width: 45%;
+}
+
+.newMessage {
+  max-width: 95%;
+  margin: 20px auto;
 }/*# sourceMappingURL=Chat.module.css.map */
