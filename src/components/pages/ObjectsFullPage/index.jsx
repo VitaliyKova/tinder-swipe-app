@@ -37,7 +37,7 @@ const FullAgentPage = () => {
                             </div>
                             <div className='object-info'>
                                 <div className='type-price'>
-                                    <p className='object-type'>{apartment.status} </p>
+                                    <p className='object-type'>{apartment.type} </p>
                                     <p className='object-price'>От ${apartment.price} </p>
                                 </div>
 

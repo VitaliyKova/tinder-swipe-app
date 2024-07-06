@@ -8,7 +8,7 @@ function ChatLinkApart({ apart }) {
     <div className={styles.container}>
       <img src={apart.url[0]} alt="aprt" className={styles.apartImg} />
       <h2 className={styles.title}>$ {apart.price}</h2>
-      <p className={styles.status}>{apart.status}</p>
+      <p className={styles.status}>{apart.type}</p>
       <div className={styles.details}>
         <ObjectDetails styleClass="grey" />
       </div>

@@ -81,6 +81,7 @@ const globalObject = {
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor1.jpg",
         price: 40000,
         status: "Аренда",
+        type: "2+1  Новострой",
         likeCounter: 52,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
@@ -104,6 +105,7 @@ const globalObject = {
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor2.jpg",
         price: 30000,
         status: "Продажа",
+        type: "1+1 Вторичка",
         likeCounter: 32,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
@@ -127,6 +129,7 @@ const globalObject = {
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor3.jpg",
         price: 50000,
         status: "Аренда",
+        type: "2+1 500 метров от моря",
         likeCounter: 22,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
@@ -150,6 +153,7 @@ const globalObject = {
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor4.jpg",
         price: 50000,
         status: "Аренда",
+        type: "3+1 В самом центе города",
         likeCounter: 22,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
@@ -173,6 +177,7 @@ const globalObject = {
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor5.jpg",
         price: 50000,
         status: "Продажа",
+        type: "2+1 Вторичка у моря",
         likeCounter: 22,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
@@ -196,6 +201,7 @@ const globalObject = {
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor6.jpg",
         price: 50000,
         status: "Продажа",
+        type: "4+1 В дали от суеты",
         likeCounter: 22,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
@@ -219,6 +225,7 @@ const globalObject = {
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor7.jpg",
         price: 50000,
         status: "Продажа",
+        type: "2+1 Идеально для родителей",
         likeCounter: 22,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
@@ -242,6 +249,7 @@ const globalObject = {
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor1.jpg",
         price: 50000,
         status: "Аренда",
+        type: "3+1 Для семейной пары",
         likeCounter: 22,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
@@ -265,6 +273,7 @@ const globalObject = {
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor2.jpg",
         price: 50000,
         status: "Аренда",
+        type: "2+1  Новострой",
         likeCounter: 22,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
@@ -288,6 +297,7 @@ const globalObject = {
         brockerAvatar: process.env.PUBLIC_URL + "/images/stor3.jpg",
         price: 50000,
         status: "Продажа",
+        type: "2+1 Вторичка у моря",
         likeCounter: 22,
         locations: [
           { lat: 36.887730, lng: 30.703146, name: "Вы" },
