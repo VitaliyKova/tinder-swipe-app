@@ -11,7 +11,8 @@ const FullAgentPage = () => {
     const navigate = useNavigate();
 
     const handleOnClick = (id) => {
-        navigate(`/agent/${id}`);
+        // navigate(`/agent/${id}`);
+        navigate(`/`);
     }
 
     return (
@@ -46,7 +47,7 @@ const FullAgentPage = () => {
                         </div>
                     </div>
                 ))}
-                <Navigator/>
+                {/* <Navigator/> */}
             </div>
         </>
     );

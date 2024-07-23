@@ -20,7 +20,7 @@ const HeaderFullAgent = ({ title, nav , agent }) => {
             <div className={`header-top ${agent}`}>
                 <div className="header-left">
                     <button
-                        onTouchEnd={() => navigate('/home')}
+                        onTouchEnd={() => navigate('/')}
                         className="header__button header__button--back button_background_none"
                     >
                         <img

@@ -6,7 +6,7 @@ function BotomBlock({ brocker }) {
   const navigate = useNavigate();
   return (
     <div className="botom-block">
-      <div className="brocker" onClick={() => navigate(`/agent/${brocker?.id}`)}>
+      <div className="brocker" onClick={() => navigate(`/`)}>
         <img className="brocker__img" src={brocker?.brockerAvatar} alt="" />
         <div className="brocker__info">
           <p className="brocker__name">{brocker?.brocker}</p>
