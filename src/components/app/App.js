@@ -29,11 +29,10 @@ function App() {
       {isMobileView ? (
         <Router>
           <Routes>
-            {/* <Route path="/" element={<CountryPage />} /> */}
-            {/* <Route path="/home" element={<MainPage />} /> */}
-            {/* <Route path="/agent/:id" element={<AgentPage />} /> */}
+            <Route path="/tinder-swipe-app" element={<CountryPage />} />
+            <Route path="/home" element={<MainPage />} />
+            <Route path="/agent/:id" element={<AgentPage />} />
             <Route path="/full_agent" element={<FullAgentPage />} />
-            <Route path="/" element={<AgentPage />} />
             <Route path="/FullInfo/:id" element={<FullInfo />} />
             <Route path="/chat/:id" element={<Chat />} />
             <Route path="/full_objects" element={<ObjectsFullPage />} />

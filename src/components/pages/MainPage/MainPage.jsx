@@ -132,7 +132,7 @@ function MainPage() {
         {currentList.length >= 1 && (
           <BotomBlock brocker={currentBrocker} />
         )}
-        {/* <Navigator/> */}
+        <Navigator/>
       </div>
     )
   );

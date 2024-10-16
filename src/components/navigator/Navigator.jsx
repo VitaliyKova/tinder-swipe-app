@@ -6,7 +6,7 @@ function Navigator() {
   const navigate = useNavigate();
   return (
     <div className="navigator">
-      <button className="navigator__button navigator__button-world" onClick={() => navigate('/')}>
+      <button className="navigator__button navigator__button-world" onClick={() => navigate('/tinder-swipe-app')}>
         <svg
           width="25"
           height="25"

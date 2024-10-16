@@ -8,19 +8,19 @@ const Header = ({ brocker }) => {
   const [currentPath, setCurrentPath] = useState(location.pathname);
 
   // Функция для проверки соответствия текущего пути заданному шаблону
-  // const isActive = (pathPattern) => {
-  //     const regex = new RegExp(`^${pathPattern.replace(/:\w+/g, '\\d+')}$`);
-  //     return regex.test(currentPath);
-  // };
   const isActive = (pathPattern) => {
-    return true;
+      const regex = new RegExp(`^${pathPattern.replace(/:\w+/g, '\\d+')}$`);
+      return regex.test(currentPath);
   };
+  // const isActive = (pathPattern) => {
+  //   return true;
+  // };
 
   return (
     <div className="header">
       <div className="header-top">
         <div className="header-left">
-          {/* <button
+          <button
                         onTouchEnd={() => navigate(-1)}
                         className="header__button header__button--back button_background_none"
                     >
@@ -29,7 +29,7 @@ const Header = ({ brocker }) => {
                             src={process.env.PUBLIC_URL + "/images/Back_Solid.svg"}
                             alt="icon back page"
                         />
-                    </button> */}
+                    </button>
           <div className="brocker-inner">
             <img
               className="brocker__img-header"

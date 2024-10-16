@@ -10,9 +10,9 @@ import SwipeCard from "../../swipeCard/SwipeCard";
 import LoadingSpiner from "../../LoadingSpiner/LoadingSpiner";
 
 const AgentPage = () => {
-  // const { id } = useParams();
-  // const apartment = globalObject.aparts.find((ap) => ap.id === parseInt(id));
-  const apartment = globalObject.aparts.find((ap) => ap.id === 5); // Конкретный агент
+  const { id } = useParams();
+  const apartment = globalObject.aparts.find((ap) => ap.id === parseInt(id));
+  // const apartment = globalObject.aparts.find((ap) => ap.id === 5); // Конкретный агент
   const [isExpended, setIsExpended] = useState(false);
   const [lastDirection, setLastDirection] = useState();
   const [history, setHistory] = useState([]);
@@ -137,7 +137,7 @@ const AgentPage = () => {
         </div>
       </div>
       <BotomBlock brocker={apartment} />
-      {/* <Navigator /> */}
+      <Navigator />
     </div>
   );
 };
