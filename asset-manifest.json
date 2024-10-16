@@ -1,18 +1,36 @@
 {
   "files": {
-    "main.css": "/tinder-swipe-app/static/css/main.3c545f60.css",
-    "main.js": "/tinder-swipe-app/static/js/main.c5e38ed0.js",
+    "main.css": "/tinder-swipe-app/static/css/main.db4c2197.css",
+    "main.js": "/tinder-swipe-app/static/js/main.6f006da9.js",
     "static/js/453.be42a8db.chunk.js": "/tinder-swipe-app/static/js/453.be42a8db.chunk.js",
+    "static/media/turkish.jpg": "/tinder-swipe-app/static/media/turkish.855567eb5f15f9b3ccc6.jpg",
+    "static/media/maldy.jpg": "/tinder-swipe-app/static/media/maldy.9196b9c509408cc9fc55.jpg",
+    "static/media/map.png": "/tinder-swipe-app/static/media/map.6d98ef1ec6e20e8c2f35.png",
+    "static/media/tay.jpg": "/tinder-swipe-app/static/media/tay.5ffbc26f982fb0e0ff2f.jpg",
+    "static/media/UAE.jpg": "/tinder-swipe-app/static/media/UAE.3d4bc3a86929b668f950.jpg",
+    "static/media/italy.jpg": "/tinder-swipe-app/static/media/italy.d6a148c13d4cf7be78e6.jpg",
     "static/media/New Rubrik Medium.otf": "/tinder-swipe-app/static/media/New Rubrik Medium.17e768c03f61c4093184.otf",
+    "static/media/qr.png": "/tinder-swipe-app/static/media/qr.9103cc281c99f54a0e4c.png",
     "static/media/New Rubrik Light.otf": "/tinder-swipe-app/static/media/New Rubrik Light.380bcdf5db0e102c55ca.otf",
     "static/media/New Rubrik ExtraBold.otf": "/tinder-swipe-app/static/media/New Rubrik ExtraBold.20beeec85ad1a8c9a8e4.otf",
+    "static/media/logo.svg": "/tinder-swipe-app/static/media/logo.e645dc8718dc7f6a089894831ad6d3f9.svg",
+    "static/media/slick.svg": "/tinder-swipe-app/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/tinder-swipe-app/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/tinder-swipe-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/photo.svg": "/tinder-swipe-app/static/media/photo.c2f939c73b2fa941189a751fa7258f56.svg",
+    "static/media/slick.woff": "/tinder-swipe-app/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/geo.svg": "/tinder-swipe-app/static/media/geo.15271720f23a0d5bcbfc8711d5dc40b1.svg",
     "index.html": "/tinder-swipe-app/index.html",
-    "main.3c545f60.css.map": "/tinder-swipe-app/static/css/main.3c545f60.css.map",
-    "main.c5e38ed0.js.map": "/tinder-swipe-app/static/js/main.c5e38ed0.js.map",
+    "static/media/micro.svg": "/tinder-swipe-app/static/media/micro.9c96a60ddfdd50d8a88f36b546a355e3.svg",
+    "static/media/search.svg": "/tinder-swipe-app/static/media/search.ee03419bc1fcc8d72af0fef3c6a465e4.svg",
+    "static/media/dubleSucesful.svg": "/tinder-swipe-app/static/media/dubleSucesful.e91edb52d2ace40dc2039970dbf7c34d.svg",
+    "static/media/send.svg": "/tinder-swipe-app/static/media/send.8f9fdcbe472f86104ef7481c823a87fe.svg",
+    "main.db4c2197.css.map": "/tinder-swipe-app/static/css/main.db4c2197.css.map",
+    "main.6f006da9.js.map": "/tinder-swipe-app/static/js/main.6f006da9.js.map",
     "453.be42a8db.chunk.js.map": "/tinder-swipe-app/static/js/453.be42a8db.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c545f60.css",
-    "static/js/main.c5e38ed0.js"
+    "static/css/main.db4c2197.css",
+    "static/js/main.6f006da9.js"
   ]
 }
